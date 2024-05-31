@@ -210,7 +210,6 @@ main {
   height: 300px;
   object-fit: cover;
   border-radius: 15px;
-  margin-inline: 0.5em;
 }
 .details-tag {
   font-size: 18vw;
@@ -223,6 +222,10 @@ main {
       width: 100%;
       padding-inline: 0.5em;
     }
+  }
+  .ring-img {
+    width: 300px;
+    height: 300px;
   }
 }
 
