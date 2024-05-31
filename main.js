@@ -12,7 +12,6 @@ const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
 
 let ring = null;
-let contactRotation = false;
 let renderer, scene, camera;
 const canvas = document.querySelector("canvas.webgl");
 
@@ -60,7 +59,7 @@ function initThreeJS() {
 
   loader.load("/ring3d.glb", (glb) => {
     ring = glb.scene;
-    ring.position.set(-1, 0.3, 0);
+    ring.position.set(-0.5, 0.3, 0);
     ring.scale.set(0.4, 0.4, 0.4);
     scene.add(ring);
 
