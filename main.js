@@ -292,7 +292,13 @@ function initRenderLoop() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  preloadFiles(["ring3d.glb", "h-ring.avif", "h-ring2.avif", "h-ring3.avif"]);
+  preloadFiles([
+    "favicon.svg",
+    "ring3d.glb",
+    "h-ring.avif",
+    "h-ring2.avif",
+    "h-ring3.avif",
+  ]);
   initThreeJS();
   initRenderLoop();
   initSmoothScroll();
