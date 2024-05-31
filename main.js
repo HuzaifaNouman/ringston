@@ -66,7 +66,7 @@ function initThreeJS() {
 
     const animate = gsap.timeline({
       scrollTrigger: {
-        trigger: "details-section",
+        trigger: ".details-section",
         start: "top bottom",
         end: "bottom top",
         scrub: true,
@@ -193,35 +193,15 @@ function animateWords() {
 }
 
 function detailsSection() {
+  console.log("hello");
   const animate = gsap.timeline({
     scrollTrigger: {
       trigger: ".details-section",
       start: "30% bottom",
-      end: "bottom top",
     },
   });
-
-  animate
-    .to(".details h1", {
-      y: -100,
-    })
-    .from(
-      ".ring-img",
-      {
-        y: -50,
-        height: 0,
-      },
-      "<"
-    );
-
-  gsap.to(".details-tag", {
-    scrollTrigger: {
-      trigger: ".details-tag",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-    },
-    x: 200,
+  animate.from(".ring-img", {
+    scaleY: 0,
   });
 }
 
@@ -321,10 +301,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ]);
   initThreeJS();
   initRenderLoop();
+  initSmoothScroll();
 
   animateWords();
   detailsSection();
   animateSliderSection();
   waitListSection();
-  initSmoothScroll();
 });
