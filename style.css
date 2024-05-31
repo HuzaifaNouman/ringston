@@ -219,7 +219,6 @@ main {
 @media (max-width: 736px) {
   .details {
     padding-inline: 1.5em;
-    justify-content: start;
 
     .details-para {
       width: 100%;
