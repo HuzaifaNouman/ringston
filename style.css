@@ -223,10 +223,6 @@ main {
       padding-inline: 0.5em;
     }
   }
-  .ring-img {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 /* Horizontal scroller section */
