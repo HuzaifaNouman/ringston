@@ -227,14 +227,10 @@ function detailsSection() {
 
 function animateSliderSection() {
   const matchMedia = gsap.matchMedia();
+  const slider = document.querySelector(".main-scroller");
+  const slides = gsap.utils.toArray(".scroller");
 
   matchMedia.add("(min-width: 768px)", () => {
-    const slider = document.querySelector(".main-scroller");
-    const slides = gsap.utils.toArray(".scroller");
-
-    if (!slider) {
-      return;
-    }
     const animateSlider = gsap.timeline({
       defaults: {
         ease: "none",
@@ -256,6 +252,7 @@ function animateSliderSection() {
     );
 
     slides.forEach((slide) => {
+      slide.style.willChange = "transform, opacity";
       const paragraph = slide.querySelector(".scroller-para");
       const slideText = new SplitType(paragraph, {
         types: "chars",
@@ -304,7 +301,6 @@ function waitListSection() {
 function initRenderLoop() {
   const tick = () => {
     if (ring) {
-      // ring.rotation.x += 0.003;
       ring.rotation.y += 0.01;
     }
 
