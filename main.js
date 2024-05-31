@@ -159,22 +159,25 @@ function preloadFiles(urls) {
 }
 
 function animateWords() {
+  let mm = gsap.matchMedia();
   const words = ["Relationships", "Romance", "Rings"];
   let index = 0;
   const textElement = document.querySelector(".animated-word");
   let split;
 
   function animateChar(chars) {
-    gsap.from(chars, {
-      yPercent: 100,
-      stagger: 0.03,
-      duration: 1.5,
-      ease: "power4.out",
-      onComplete: () => {
-        if (split) {
-          split.revert();
-        }
-      },
+    mm.add("(min-width: 768px)", () => {
+      gsap.from(chars, {
+        yPercent: 100,
+        stagger: 0.03,
+        duration: 1.5,
+        ease: "power4.out",
+        onComplete: () => {
+          if (split) {
+            split.revert();
+          }
+        },
+      });
     });
   }
 
@@ -291,8 +294,8 @@ function waitListSection() {
     stagger: 0.03,
     scrollTrigger: {
       trigger: waitListSection,
-      start: "top center",
-      end: "40% 40%",
+      start: "top bottom",
+      end: "center 50%",
       scrub: true,
     },
   });
