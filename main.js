@@ -78,11 +78,11 @@ function initThreeJS() {
     });
 
     animate
-      .to(ring.position, {
-        x: 0.5,
-        y: 0.34,
-        z: 0.2,
-      })
+      // .to(ring.position, {
+      //   x: 0.5,
+      //   y: 0.34,
+      //   z: 0.2,
+      // })
       .to(
         ring.scale,
         {
