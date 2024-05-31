@@ -123,7 +123,7 @@ window.addEventListener("resize", () => {
  */
 function preloadFile(url) {
   return new Promise((resolve, reject) => {
-    const imageFileTypes = ["svg", "avif", "jpg"];
+    const imageFileTypes = ["svg", "webp", "jpg"];
     const fileType = url.split(".").pop()?.toLowerCase();
 
     if (imageFileTypes.includes(fileType)) {
@@ -295,9 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
   preloadFiles([
     "favicon.svg",
     "ring3d.glb",
-    "h-ring.avif",
-    "h-ring2.avif",
-    "h-ring3.avif",
+    "h-ring.webp",
+    "h-ring2.webp",
+    "h-ring3.webp",
+    "hero.webp",
   ]);
   initThreeJS();
   initRenderLoop();
