@@ -158,40 +158,6 @@ function preloadFiles(urls) {
     .catch((error) => console.error("Error preloading files:", error));
 }
 
-function animateWords() {
-  let mm = gsap.matchMedia();
-  const words = ["Relationships", "Romance", "Rings"];
-  let index = 0;
-  const textElement = document.querySelector(".animated-word");
-  let split;
-
-  function animateChar(chars) {
-    mm.add("(min-width: 768px)", () => {
-      gsap.from(chars, {
-        yPercent: 100,
-        stagger: 0.03,
-        duration: 1.5,
-        ease: "power4.out",
-        onComplete: () => {
-          if (split) {
-            split.revert();
-          }
-        },
-      });
-    });
-  }
-
-  function updateText() {
-    textElement.textContent = words[index];
-    split = new SplitType(".animated-word", { types: "chars" });
-    animateChar(split.chars);
-    // index = (index + 1) % words.length;
-    index == words.length ? (index = 0) : index++;
-  }
-
-  setInterval(updateText, 2000);
-}
-
 function detailsSection() {
   console.log("hello");
   const animate = gsap.timeline({
@@ -304,7 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initRenderLoop();
   initSmoothScroll();
 
-  animateWords();
   detailsSection();
   animateSliderSection();
   waitListSection();

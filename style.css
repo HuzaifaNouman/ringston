@@ -123,13 +123,13 @@ main {
 }
 .mask {
   overflow: hidden;
-  height: 12vh;
+  /* height: 50vh; */
   width: 50vw;
 }
 .hero-type {
   position: absolute;
-  bottom: 1em;
-  left: 1em;
+  bottom: 3%;
+  left: 3em;
 }
 .hero-type h1 {
   font-size: clamp(2rem, 4vw, 6rem);
@@ -170,7 +170,7 @@ main {
   }
   .mask {
     overflow: hidden;
-    height: 15vh;
+    height: 20vh;
     width: 100%;
   }
   .hero-type h1 {
