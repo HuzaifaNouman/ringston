@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* preloader  */
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  transition: transform 2s ease, opacity 2s ease;
+}
+
+.preloader img {
+  animation: starter 2s ease-in infinite;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes starter {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.preloader.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/*    Navbar  */
+
+.navbar {
+  background-color: #ffffff57;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.logo {
+  text-decoration: none;
+  color: #000;
+}
+.logo p {
+  font-family: "Edu TAS Beginner", cursive;
+  font-size: clamp(2rem, 50%, 4rem);
+  letter-spacing: 2px;
+}
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & li:nth-child(2) {
+    font-size: clamp(1.2rem, 5%, 3rem);
+    font-weight: 300;
+  }
+
+  & li {
+    list-style: none;
+  }
+}
+.ringston-img {
+  width: 35px;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .nav-right {
+    display: none;
+  }
+}
+
+/* hero section */
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(0.7em, 5%, 1.5em);
+}
+.main-left {
+  position: relative;
+}
+.mask {
+  overflow: hidden;
+  height: 12vh;
+  width: 50vw;
+}
+.hero-type {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  padding-inline: 2em;
+}
+.hero-type h1 {
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1;
+  font-weight: 300;
+}
+.main-right {
+  position: relative;
+}
+.main-right img {
+  object-fit: cover;
+  height: 100%;
+  max-width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 14, 190, 0.426);
+}
+
+@media (max-width: 1095px) {
+  .main-left {
+    width: 60%;
+  }
+}
+@media (max-width: 930px) {
+  .main-left {
+    width: 80%;
+  }
+}
+@media (max-width: 835px) {
+  .main-right {
+    display: none;
+  }
+  .mask {
+    overflow: hidden;
+    height: 15vh;
+    width: 100%;
+  }
+}
+
+/* details section */
+
+.details-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+
+  .count {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+  }
+
+  .details-para {
+    font-size: 1.1rem;
+    width: 40%;
+    opacity: 0.8;
+  }
+}
+.ring-img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.details-tag {
+  font-size: 18vw;
+  color: rgba(133, 128, 128, 0.195);
+}
+
+@media (max-width: 736px) {
+  .details {
+    padding-inline: 1.5em;
+    justify-content: start;
+
+    .details-para {
+      width: 100%;
+    }
+  }
+}
+
+/* Horizontal scroller section */
+
+.main-scroller {
+  position: relative;
+  display: flex;
+  background-color: #000;
+  overflow: hidden;
+}
+.scroller {
+  position: relative;
+
+  & img {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+.black-overlay {
+  background-color: #00000049;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.scroller-para {
+  position: absolute;
+  top: 16%;
+  left: 5%;
+  font-size: 2rem;
+  max-width: 100%;
+  width: 70%;
+  color: #fff;
+}
+.color-black {
+  color: #000;
+}
+
+@media (max-width: 660px) {
+  .main-scroller {
+    display: block;
+  }
+  .scroller-para {
+    width: 90%;
+    font-size: 1rem;
+    opacity: 1;
+  }
+}
+
+/* waitlist section */
+
+.waitlist {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.waitlist-left {
+  color: white;
+
+  h2 {
+    font-size: 4rem;
+  }
+  button {
+    padding: 1em 0.8em;
+    border: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    margin-block: 1.8em;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  button:hover {
+    border-radius: 30px;
+  }
+  p {
+    width: 40%;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 660px) {
+  .waitlist-left p {
+    width: 90%;
+  }
+}
